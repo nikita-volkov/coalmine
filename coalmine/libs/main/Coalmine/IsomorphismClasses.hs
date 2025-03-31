@@ -8,7 +8,7 @@ module Coalmine.IsomorphismClasses where
 import Data.Text qualified
 import Data.Text.Lazy qualified
 import Data.Text.Lazy.Builder qualified
-import Text.Builder qualified
+import TextBuilder qualified
 import TextBuilderDev qualified
 
 class Strictness lazy strict where
@@ -27,6 +27,6 @@ instance Freezing TextBuilderDev.TextBuilder Data.Text.Text where
   freeze = TextBuilderDev.buildText
   melt = TextBuilderDev.text
 
-instance Freezing Text.Builder.Builder Data.Text.Text where
-  freeze = Text.Builder.run
-  melt = Text.Builder.text
+instance Freezing TextBuilder.TextBuilder Data.Text.Text where
+  freeze = TextBuilder.run
+  melt = TextBuilder.text

@@ -1,13 +1,10 @@
 cabal-version: 3.0
-name:          download
-version:       0
+name: download
+version: 0
 
 common language-settings
-  default-language:   Haskell2010
+  default-language: Haskell2010
   default-extensions:
-    NoFieldSelectors
-    NoImplicitPrelude
-    NoMonomorphismRestriction
     ApplicativeDo
     Arrows
     BangPatterns
@@ -37,6 +34,9 @@ common language-settings
     LiberalTypeSynonyms
     MultiParamTypeClasses
     MultiWayIf
+    NoFieldSelectors
+    NoImplicitPrelude
+    NoMonomorphismRestriction
     NumericUnderscores
     OverloadedLabels
     OverloadedRecordDot
@@ -59,16 +59,16 @@ common language-settings
     ViewPatterns
 
 library
-  import:          language-settings
-  hs-source-dirs:  library
+  import: language-settings
+  hs-source-dirs: library
   exposed-modules: Download
-  other-modules:   Download.Conduits
+  other-modules: Download.Conduits
   build-depends:
-    , conduit
-    , conduit-extra
-    , http-client
-    , http-conduit
-    , lzma-conduit
-    , posix-path
-    , rerebase
-    , tar-conduit
+    conduit,
+    conduit-extra,
+    http-client,
+    http-conduit,
+    lzma-conduit,
+    posix-path,
+    rerebase,
+    tar-conduit,

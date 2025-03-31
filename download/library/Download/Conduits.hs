@@ -17,7 +17,7 @@ untarSink basePath =
     fileInfoSink fileInfo = do
       entryPath <- liftIO $ case Text.decodeUtf8' (TarConduit.filePath fileInfo) of
         Left _ -> fail ("Invalid UTF8: " <> show (TarConduit.filePath fileInfo))
-        Right text -> case Path.parseText text of
+        Right text -> case Path.maybeFromText text of
           Nothing -> fail ("Invalid path: " <> show text)
           Just path -> return path
       ConduitExtra.Binary.sinkFile (Path.toFilePath (basePath <> entryPath))
