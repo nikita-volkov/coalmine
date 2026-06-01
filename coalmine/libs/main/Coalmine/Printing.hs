@@ -36,7 +36,7 @@ instance CompactPrinting Text where
   toCompactBuilder = to
 
 instance CompactPrinting String where
-  toCompactBuilder = from
+  toCompactBuilder = onto
 
 instance CompactPrinting TextBuilder where
   toCompactBuilder = id
@@ -57,19 +57,19 @@ instance CompactPrinting Int64 where
   toCompactBuilder = Ub.decimal
 
 instance CompactPrinting Word where
-  toCompactBuilder = Ub.unsignedDecimal
+  toCompactBuilder = Ub.decimal
 
 instance CompactPrinting Word8 where
-  toCompactBuilder = Ub.unsignedDecimal
+  toCompactBuilder = Ub.decimal
 
 instance CompactPrinting Word16 where
-  toCompactBuilder = Ub.unsignedDecimal
+  toCompactBuilder = Ub.decimal
 
 instance CompactPrinting Word32 where
-  toCompactBuilder = Ub.unsignedDecimal
+  toCompactBuilder = Ub.decimal
 
 instance CompactPrinting Word64 where
-  toCompactBuilder = Ub.unsignedDecimal
+  toCompactBuilder = Ub.decimal
 
 -- * Broad
 
@@ -100,7 +100,7 @@ instance BroadPrinting Text where
   toBroadBuilder = to
 
 instance BroadPrinting String where
-  toBroadBuilder = from
+  toBroadBuilder = onto
 
 instance BroadPrinting TextBuilder where
   toBroadBuilder = to
@@ -127,19 +127,19 @@ instance BroadPrinting Natural where
   toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance BroadPrinting Word where
-  toBroadBuilder = toBroadBuilder . Ub.unsignedDecimal
+  toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance BroadPrinting Word8 where
-  toBroadBuilder = toBroadBuilder . Ub.unsignedDecimal
+  toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance BroadPrinting Word16 where
-  toBroadBuilder = toBroadBuilder . Ub.unsignedDecimal
+  toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance BroadPrinting Word32 where
-  toBroadBuilder = toBroadBuilder . Ub.unsignedDecimal
+  toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance BroadPrinting Word64 where
-  toBroadBuilder = toBroadBuilder . Ub.unsignedDecimal
+  toBroadBuilder = toBroadBuilder . Ub.decimal
 
 instance (BroadPrinting a, BroadPrinting b) => BroadPrinting (a, b) where
   toBroadBuilder (a, b) =

@@ -141,8 +141,8 @@ render input startOffset endOffset explanation =
 
     finish collectedLines currentOffset currentLineStart _currentLineNum earlyEnd _startReached startLineNum startCol endCol =
       megaparsecErrorMessageLayout
-        (TextBuilder.unsignedDecimal startLineNum)
-        (TextBuilder.unsignedDecimal startColNum)
+        (TextBuilder.decimal startLineNum)
+        (TextBuilder.decimal startColNum)
         quote
         explanation
       where

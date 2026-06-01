@@ -46,7 +46,7 @@ instance Monoid Builder where
 instance Building Builder where
   type BuilderTarget Builder = Tb.TextBuilder
   toBuilder = text . fromBuilder
-  fromBuilder = toTextBuilder
+  fromBuilder = Tb.from
 
 instance Show Builder where
   show = show . fromBuilder
@@ -54,11 +54,11 @@ instance Show Builder where
 instance IsString Builder where
   fromString = text . fromString
 
-instance IsomorphicToTextBuilder Builder where
-  toTextBuilder (Builder _ builder) =
+instance Tb.Isomorphic Builder where
+  from (Builder _ builder) =
     builder mempty
-  fromTextBuilder =
-    text . fromTextBuilder
+  to =
+    text . Tb.to
 
 instance Eq Builder where
   Builder _ l == Builder _ r =
@@ -71,7 +71,7 @@ instance IsSome String Builder where
   maybeFrom = fmap (from @Text) . maybeFrom
 
 instance IsMany String Builder where
-  from = from @Text . from
+  onfrom = from @Text . onto
 
 --
 
@@ -241,7 +241,7 @@ text text =
 -- So if it contains newline characters, the contained lines won't be indented.
 uniline :: Tb.TextBuilder -> Builder
 uniline builder =
-  Builder (Tb.null builder) $ \_ -> builder
+  Builder (Tb.isEmpty builder) $ \_ -> builder
 
 -- |
 -- Efficiently constructed newline character.

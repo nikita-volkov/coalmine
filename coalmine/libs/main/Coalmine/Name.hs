@@ -83,7 +83,7 @@ instance CompactPrinting Name where
   toCompactBuilder = toSpinalCaseTextBuilder
 
 instance BroadPrinting Name where
-  toBroadBuilder = fromTextBuilder . toCompactBuilder
+  toBroadBuilder = to . toCompactBuilder
 
 instance Literal.Literal Name where
   literalParser = attoparsec

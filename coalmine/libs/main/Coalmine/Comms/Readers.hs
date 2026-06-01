@@ -49,7 +49,7 @@ varLengthSignedInteger minVal maxVal valOffset =
                   if absValueState > absValueNegativeBound
                     then
                       return
-                        $ let message = "Value is smaller than " <> (from . show) minVal
+                        $ let message = "Value is smaller than " <> (onto . show) minVal
                            in FailedStatus message path startOffset
                     else
                       if testBit byte 6
@@ -66,7 +66,7 @@ varLengthSignedInteger minVal maxVal valOffset =
               if absValueState > absValueNegativeBound
                 then
                   return
-                    $ let message = "Value is smaller than " <> (from . show) minVal
+                    $ let message = "Value is smaller than " <> (onto . show) minVal
                        in FailedStatus message path startOffset
                 else
                   if testBit byte 7
@@ -82,7 +82,7 @@ varLengthSignedInteger minVal maxVal valOffset =
               if absValueState > absValuePositiveBound
                 then
                   return
-                    $ let message = "Value is larger than " <> (from . show) maxVal
+                    $ let message = "Value is larger than " <> (onto . show) maxVal
                        in FailedStatus message path startOffset
                 else
                   if testBit byte 7

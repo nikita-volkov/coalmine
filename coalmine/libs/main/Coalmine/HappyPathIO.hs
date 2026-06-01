@@ -52,7 +52,7 @@ loadRequiredEnv name = do
 -- | Load and parse a non-required environment variable.
 loadNonRequiredEnv :: (LenientParser a) => Text -> IO (Maybe a)
 loadNonRequiredEnv name = do
-  env <- fmap from <$> lookupEnv (to name)
+  env <- fmap onto <$> lookupEnv (to name)
   case env of
     Just env -> case parse parser env of
       Left err ->

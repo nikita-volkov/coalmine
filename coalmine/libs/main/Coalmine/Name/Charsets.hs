@@ -4,4 +4,4 @@ import Coalmine.InternalPrelude
 import StructureKit.Charset
 
 part :: Charset
-part = lowerLatin <> num
+part = lowerLatin <> decimalDigits

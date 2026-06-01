@@ -64,11 +64,11 @@ library
   exposed-modules: Download
   other-modules: Download.Conduits
   build-depends:
+    algebraic-path,
     conduit,
     conduit-extra,
     http-client,
     http-conduit,
     lzma-conduit,
-    posix-path,
     rerebase,
     tar-conduit,

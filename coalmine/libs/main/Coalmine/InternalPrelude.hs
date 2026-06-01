@@ -77,7 +77,8 @@ import Network.IP.Addr as Exports (IP, IP4 (..), IP6 (..), InetAddr (..), InetPo
 import System.IO as Exports
 import Test.QuickCheck.Arbitrary as Exports (Arbitrary)
 import Test.QuickCheck.Instances ()
-import TextBuilderDev as Exports (IsomorphicToTextBuilder (..), TextBuilder, buildText)
+import TextBuilder as Exports (TextBuilder)
+import TextBuilderLawfulConversions ()
 import Witherable as Exports
 import Prelude hiding (List, Vector, catMaybes, chosen, filter, mapMaybe, repeat, toList, uncons, unzip, zip, zipWith, (%))
 

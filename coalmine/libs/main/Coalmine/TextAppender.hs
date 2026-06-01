@@ -27,7 +27,7 @@ newtype TextAppender
 
 finalize :: TextAppender -> Text
 finalize (TextAppender builder) =
-  buildText builder
+  to builder
 
 init :: TextAppender
 init =
@@ -35,4 +35,4 @@ init =
 
 append :: Text -> TextAppender -> TextAppender
 append chunk (TextAppender builder) =
-  TextAppender $ builder <> toTextBuilder chunk
+  TextAppender $ builder <> to chunk

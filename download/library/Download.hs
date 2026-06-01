@@ -5,13 +5,13 @@ module Download
   )
 where
 
+import AlgebraicPath (Path)
+import AlgebraicPath qualified as Path
 import Conduit qualified
 import Data.ByteString qualified as ByteString
 import Download.Conduits qualified as Conduits
 import Network.HTTP.Client qualified as HttpClient
 import Network.HTTP.Simple qualified as HttpConduit
-import PosixPath (Path)
-import PosixPath qualified as Path
 import System.IO qualified
 import Prelude
 

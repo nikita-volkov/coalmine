@@ -50,5 +50,5 @@ cereal get fetch =
         then return $ Left "Not enough data"
         else case decode chunk of
           Cereal.Done res _ -> return $ Right res
-          Cereal.Fail err _ -> return $ Left $ from err
+          Cereal.Fail err _ -> return $ Left $ onto err
           Cereal.Partial decodeNext -> go decodeNext

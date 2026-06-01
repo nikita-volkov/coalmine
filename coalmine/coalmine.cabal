@@ -79,8 +79,8 @@ library
     Coalmine.BaseExtras.Alternative
     Coalmine.BaseExtras.Applicative
     Coalmine.BaseExtras.Function
-    Coalmine.BaseExtras.IO
     Coalmine.BaseExtras.Integer
+    Coalmine.BaseExtras.IO
     Coalmine.BaseExtras.List
     Coalmine.BaseExtras.MonadPlus
     Coalmine.BaseExtras.Monoid
@@ -115,8 +115,8 @@ library
     Coalmine.DiffOf
     Coalmine.Domain
     Coalmine.ErrBuilder
-    Coalmine.ErrReport
     Coalmine.ErrorReport
+    Coalmine.ErrReport
     Coalmine.EvenSimplerPaths
     Coalmine.EvenSimplerPaths.AttoparsecHelpers
     Coalmine.EvenSimplerPaths.Charsets
@@ -124,17 +124,17 @@ library
     Coalmine.EvenSimplerPaths.QuickCheckGens
     Coalmine.EvenSimplerPathsClasses
     Coalmine.EvenSimplerPathsClassesLaws
-    Coalmine.FileSystem
     Coalmine.Fileset
+    Coalmine.FileSystem
     Coalmine.FoldlExtras.Fold
     Coalmine.Formatting
     Coalmine.Formatting.Rendering
     Coalmine.Gen
     Coalmine.GithubActionKit
-    Coalmine.HCurrying
     Coalmine.HandleService
     Coalmine.HappyPathIO
     Coalmine.HashableExtras
+    Coalmine.HCurrying
     Coalmine.HeadedMegaparsecExtras
     Coalmine.HeadedMegaparsecExtras.Text
     Coalmine.Inter
@@ -204,8 +204,6 @@ library
     Coalmine.Streamer
     Coalmine.SyntaxModelling
     Coalmine.SyntaxModellingQuickCheck
-    Coalmine.TH.Code
-    Coalmine.TH.Exp
     Coalmine.Tasty
     Coalmine.Tasty.TestTrees
     Coalmine.Tasty.TestTrees.Cereal
@@ -214,6 +212,8 @@ library
     Coalmine.TerminalMarkup
     Coalmine.TextAppender
     Coalmine.TextExtras.Text
+    Coalmine.TH.Code
+    Coalmine.TH.Exp
     Coalmine.TimeExtras.Conversions
     Coalmine.TimeExtras.IO
     Coalmine.TransformersExtras.Cont
@@ -244,8 +244,6 @@ library
     Coalmine.XmlSyntaxParser.Attoparsec
 
   build-depends:
-    Decimal,
-    QuickCheck,
     acc,
     aeson,
     aeson-unqualified-ast,
@@ -261,6 +259,7 @@ library
     conduit,
     data-default,
     data-dword,
+    Decimal,
     deferred-folds,
     deque,
     directory,
@@ -273,7 +272,7 @@ library
     http-media,
     http-types,
     jsonifier,
-    lawful-conversions ^>=0.1.6,
+    lawful-conversions ^>=0.4,
     leb128-cereal,
     lift-instances,
     machines,
@@ -283,6 +282,7 @@ library
     optics,
     optparse-applicative,
     qq-extras,
+    QuickCheck,
     quickcheck-classes,
     quickcheck-instances,
     rerebase,
@@ -292,8 +292,9 @@ library
     tasty-hunit,
     tasty-quickcheck,
     template-haskell,
-    text-builder,
-    text-builder-dev ^>=0.3.9.1,
+    text-builder ^>=1,
+    text-builder-dev ^>=0.4,
+    text-builder-lawful-conversions ^>=0.1.4.1,
     th-lego,
     tuple,
     turtle,

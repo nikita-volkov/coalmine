@@ -1,13 +1,13 @@
 -- | Helper adaptations of conduit.
 module Download.Conduits where
 
+import AlgebraicPath (Path)
+import AlgebraicPath qualified as Path
 import Conduit
 import Data.Conduit.Binary qualified as ConduitExtra.Binary
 import Data.Conduit.Lzma qualified as LzmaConduit
 import Data.Conduit.Tar qualified as TarConduit
 import Data.Text.Encoding qualified as Text
-import PosixPath (Path)
-import PosixPath qualified as Path
 import Prelude
 
 untarSink :: (MonadResource m, MonadThrow m) => Path -> ConduitT ByteString Void m ()

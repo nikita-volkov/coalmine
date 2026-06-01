@@ -61,10 +61,10 @@ stringSchema minLength maxLength =
     ( AesonValueParser.string . AesonValueParser.matchedText $ \text ->
         let length = Text.length text
          in if length < minLength
-              then Left $ "Shorter than " <> (from . show) minLength
+              then Left $ "Shorter than " <> (onto . show) minLength
               else
                 if length > maxLength
-                  then Left $ "Longer than " <> (from . show) maxLength
+                  then Left $ "Longer than " <> (onto . show) maxLength
                   else Right text
     )
 

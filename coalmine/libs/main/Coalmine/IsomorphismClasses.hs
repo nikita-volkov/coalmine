@@ -9,7 +9,6 @@ import Data.Text qualified
 import Data.Text.Lazy qualified
 import Data.Text.Lazy.Builder qualified
 import TextBuilder qualified
-import TextBuilderDev qualified
 
 class Strictness lazy strict where
   toStrict :: lazy -> strict
@@ -23,10 +22,6 @@ instance Freezing Data.Text.Lazy.Builder.Builder Data.Text.Lazy.Text where
   freeze = Data.Text.Lazy.Builder.toLazyText
   melt = Data.Text.Lazy.Builder.fromLazyText
 
-instance Freezing TextBuilderDev.TextBuilder Data.Text.Text where
-  freeze = TextBuilderDev.buildText
-  melt = TextBuilderDev.text
-
 instance Freezing TextBuilder.TextBuilder Data.Text.Text where
-  freeze = TextBuilder.run
+  freeze = TextBuilder.toText
   melt = TextBuilder.text
